@@ -270,7 +270,7 @@ h6 {
 }
 
 .cta-primary:hover {
-    background: #024ba8;
+    background: #3b82f6;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -2450,6 +2450,10 @@ a {
     font-family: var(--heading-font);
 }
 
+.hod-quote-content p strong {
+    color: var(--primary-blue);
+}
+
 
 
 
@@ -3344,6 +3348,11 @@ body {
 
     /* --- ENHANCED MOBILE OPTIMIZATIONS --- */
 
+    /* Hide University Text in Navbar */
+    .university-info .university-text {
+        display: none;
+    }
+
     /* 1. HOD Section Fix */
     .hod-section {
         padding: 4rem 1rem;
@@ -3496,7 +3505,10 @@ body {
 
     /* 8. Circular Stats - 3 Columns Force */
     .stats-grid-circular {
-        grid-template-columns: repeat(3, 1fr) !important;
+        display: flex !important;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: nowrap !important;
         gap: 0.25rem !important;
     }
 
@@ -3541,6 +3553,11 @@ body {
         text-align: center !important;
         margin-top: 0.5rem;
     }
+
+    /* Center Workcohol Solutions card on mobile */
+    .company-workcohol {
+        grid-column: 1 / -1;
+    }
 }
 
 /* ===================================
@@ -3575,7 +3592,7 @@ body {
 }
 
 .card-blue {
-    background: var(--primary-blue);
+    background: #3b82f6;
     color: var(--white);
     grid-row: span 2;
     display: flex;
