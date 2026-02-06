@@ -3276,10 +3276,7 @@ a {
 /* ===================================
    STICKY ADMISSIONS CTA (All Devices)
    =================================== */
-body {
-    padding-bottom: 90px;
-    /* Space for sticky bar */
-}
+/* Removed default body padding - will be added only for mobile */
 
 .sticky-cta-mobile {
     position: fixed;
@@ -4509,5 +4506,175 @@ body {
 
     .footer-contact-minimal {
         align-items: center !important;
+    }
+}
+
+/* ===================================
+   MOBILE STICKY CTA REDESIGN
+   =================================== */
+
+.sticky-cta-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sticky-cta-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        padding: 12px 16px;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .sticky-action-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 4px;
+        border-radius: 12px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 60px;
+        color: white;
+    }
+
+    .sticky-action-btn:active {
+        transform: scale(0.96);
+    }
+
+    .sticky-action-btn i {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+
+    .sticky-action-btn span {
+        font-size: 0.75rem;
+        font-weight: 400;
+        font-family: var(--heading-font, sans-serif);
+        line-height: 1.2;
+    }
+
+    /* Button Colors */
+    .btn-navy {
+        background-color: #1e293b;
+        /* Dark Navy */
+    }
+
+    .btn-green {
+        background-color: #00ca55;
+        /* Vibrant WhatsApp Green */
+    }
+
+    .btn-blue {
+        background-color: #1d4ed8;
+        /* Royal Blue */
+    }
+}
+
+/* ===================================
+   DESKTOP STICKY CTA
+   =================================== */
+
+.sticky-cta-desktop {
+    display: none;
+    /* Hidden by default (mobile first) */
+}
+
+@media (min-width: 769px) {
+    .footer {
+        padding-bottom: 0.5rem;
+    }
+
+    .sticky-cta-desktop {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+        z-index: 999;
+        padding: 0.75rem 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        animation: slideUp 0.5s ease-out 1s backwards;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .sticky-desktop-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .sticky-text-group {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sticky-title {
+        color: #1a365d;
+        /* Dark Blue */
+        font-weight: 700;
+        font-size: 0.8rem;
+        font-family: var(--heading-font, sans-serif);
+        line-height: 1.2;
+    }
+
+    .sticky-subtitle {
+        color: #64748b;
+        font-size: 0.6rem;
+        font-weight: 500;
+    }
+
+    .sticky-desktop-btn {
+        background: #f59e0b;
+        /* Orange */
+        color: #0f172a;
+        /* Dark Text */
+        padding: 0.75rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .sticky-desktop-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+        background: #d97706;
     }
 }
