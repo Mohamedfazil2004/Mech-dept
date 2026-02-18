@@ -179,7 +179,7 @@ h6 {
 }
 
 .logo-image {
-    height: 45px;
+    height: 67px;
     width: auto;
     object-fit: contain;
 }
@@ -318,7 +318,7 @@ h6 {
 }
 
 .hero-badge {
-    margin-top: 30px;
+    margin-top: 50px;
     display: inline-block;
     background: var(--accent-gold);
     color: var(--slate-900);
@@ -4216,8 +4216,8 @@ a {
     }
 
     .logo-image {
-        height: 38px !important;
-        /* Slightly smaller to fit rows better */
+        height: 48px !important;
+        /* Slightly larger for better visibility */
         width: auto;
     }
 
